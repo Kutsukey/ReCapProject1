@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReCapProject1.DataAccess\ReCapProject1.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>
