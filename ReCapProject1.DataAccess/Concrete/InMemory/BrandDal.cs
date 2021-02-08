@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReCapProject1.DataAccess
+namespace ReCapProject1.DataAccess.InMemory
 {
     public class BrandDal
     {

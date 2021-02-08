@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReCapProject1.Business
 {
-    public class CarManager:ICarService,ICarDal
+    public class CarManager:ICarService
     {
         ICarDal _carService;
 
@@ -19,7 +19,14 @@ namespace ReCapProject1.Business
 
         public void Add(Car car)
         {
-            _carService.Add(car);
+            if (car.DailyPrice>0 && car.Descriptions[250]>=2)
+            {
+                _carService.Add(car);
+            }
+            else
+            {
+                Console.WriteLine("Açıklama ve günlük miktar geçersiz.");
+            }
         }
 
         public void Delete(Car car)
@@ -34,7 +41,7 @@ namespace ReCapProject1.Business
 
         public Car GetById(int Id)
         {
-            return _carService.GetById(Id);
+            return _carService.Get(c=>c.Id==Id);
         }
 
         public void Update(Car car)

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReCapProject1.DataAccess", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReCapProject1.Entities", "ReCapProject1.Entities\ReCapProject1.Entities.csproj", "{73AB6344-B1E5-4F93-B686-C72F343E1828}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{9F74551A-C93B-4159-A424-323275FF4094}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{73AB6344-B1E5-4F93-B686-C72F343E1828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73AB6344-B1E5-4F93-B686-C72F343E1828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73AB6344-B1E5-4F93-B686-C72F343E1828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F74551A-C93B-4159-A424-323275FF4094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F74551A-C93B-4159-A424-323275FF4094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F74551A-C93B-4159-A424-323275FF4094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F74551A-C93B-4159-A424-323275FF4094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
