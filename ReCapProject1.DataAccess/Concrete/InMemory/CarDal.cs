@@ -1,4 +1,5 @@
 ﻿using ReCapProject1.Entities;
+using ReCapProject1.Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,11 @@ namespace ReCapProject1.DataAccess.InMemory
         public Car GetById(int Id)
         {
             return cars.SingleOrDefault(c=>c.Id==Id);
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)

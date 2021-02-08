@@ -1,5 +1,6 @@
 ﻿using ReCapProject1.DataAccess;
 using ReCapProject1.Entities;
+using ReCapProject1.Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace ReCapProject1.Business
         void Delete(Car car);
         List<Car> GetAll();
         Car GetById(int Id);
+        List<CarDetailDto> GetCarDetails();
     }
 }
