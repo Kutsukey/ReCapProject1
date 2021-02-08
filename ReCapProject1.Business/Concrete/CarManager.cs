@@ -1,5 +1,6 @@
 ﻿using ReCapProject1.DataAccess;
 using ReCapProject1.Entities;
+using ReCapProject1.Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,13 @@ namespace ReCapProject1.Business
 
         public void Add(Car car)
         {
-            if (car.DailyPrice>0 && car.Descriptions[250]>=2)
+            if (car.DailyPrice>0 && car.Descriptions.Length>2)
             {
                 _carService.Add(car);
             }
             else
             {
-                Console.WriteLine("Açıklama ve günlük miktar geçersiz.");
+                Console.WriteLine("Açıklama veya günlük miktar geçersiz.");
             }
         }
 
@@ -42,6 +43,11 @@ namespace ReCapProject1.Business
         public Car GetById(int Id)
         {
             return _carService.Get(c=>c.Id==Id);
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _carService.GetCarDetails();
         }
 
         public void Update(Car car)
