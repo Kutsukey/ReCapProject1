@@ -1,4 +1,6 @@
-﻿using ReCapProject1.DataAccess;
+﻿using Core.Utility.Results;
+using ReCapProject1.Business.Abstract;
+using ReCapProject1.DataAccess;
 using ReCapProject1.Entities;
 using ReCapProject1.Entities.DTO;
 using System;
@@ -11,11 +13,11 @@ namespace ReCapProject1.Business
 {
     public interface ICarService
     {
-        void Add(Car car);
-        void Update(Car car);
-        void Delete(Car car);
-        List<Car> GetAll();
-        Car GetById(int Id);
-        List<CarDetailDto> GetCarDetails();
+        IResult Add(Car entity);
+        IResult Update(Car entity);
+        IResult Delete(Car entity);
+        IDataResult<List<Car>> GetAll();
+        IDataResult<Car> GetById(int Id);
+        IDataResult<List<CarDetailDto>> GetCarDetails();
     }
 }

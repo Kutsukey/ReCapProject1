@@ -1,4 +1,6 @@
-﻿using ReCapProject1.DataAccess;
+﻿using Core.Utility.Results;
+using ReCapProject1.Business.Constrants;
+using ReCapProject1.DataAccess;
 using ReCapProject1.Entities;
 using ReCapProject1.Entities.DTO;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ReCapProject1.Business
 {
-    public class CarManager:ICarService
+    public class CarManager : ICarService
     {
         ICarDal _carService;
 
@@ -18,41 +20,46 @@ namespace ReCapProject1.Business
             _carService = carService;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-            if (car.DailyPrice>0 && car.Descriptions.Length>2)
+            if (car.DailyPrice > 0 && car.Descriptions.Length > 2)
             {
                 _carService.Add(car);
+
+                return new SuccessResult(Messages.CarAdded);
             }
             else
             {
-                Console.WriteLine("Açıklama veya günlük miktar geçersiz.");
+                return new ErrorResult(Messages.CarNamePriceInvalid);
             }
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carService.Delete(car);
+            return new SuccessResult(Messages.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carService.GetAll();
+            
+            return new SuccessDataResult<List<Car>>(_carService.GetAll());
         }
 
-        public Car GetById(int Id)
+        public IDataResult<Car> GetById(int Id)
         {
-            return _carService.Get(c=>c.Id==Id);
+            return new SuccessDataResult<Car>(_carService.Get(c => c.Id == Id));
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return _carService.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(_carService.GetCarDetails());
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             _carService.Update(car);
+            return new SuccessResult(Messages.CarUpdated);
         }
     }
 }

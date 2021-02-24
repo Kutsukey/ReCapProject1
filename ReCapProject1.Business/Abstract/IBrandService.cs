@@ -1,4 +1,5 @@
-﻿using ReCapProject1.Entities;
+﻿using Core.Utility.Results;
+using ReCapProject1.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace ReCapProject1.Business.Abstract
 {
     public interface IBrandService
     {
-        void Add(Brand brand);
-        void Update(Brand brand);
-        void Delete(Brand brand);
-        List<Brand> GetAll();
+        IResult Add(Brand entity);
+        IResult Update(Brand entity);
+        IResult Delete(Brand entity);
+        IDataResult<List<Brand>> GetAll();
     }
 }

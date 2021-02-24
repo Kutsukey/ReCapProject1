@@ -1,6 +1,4 @@
-﻿using Core.DataAccess;
-using Core.Utility.Results;
-using ReCapProject1.Entities;
+﻿using ReCapProject1.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ReCapProject1.Business.Abstract
 {
-    public interface IColorService:IServiceRepository<Color>
+    public interface ICustomerService:IServiceRepository<Customers>
     {
     }
 }
